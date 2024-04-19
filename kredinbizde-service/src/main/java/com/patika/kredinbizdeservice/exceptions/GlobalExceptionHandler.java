@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionResponse> handleAllException(Exception exception) {
         log.error("exception occurred. {0}", exception.getCause());
-
+//log service nasıl yakalacak hataları? nerede gönderiyorsun?
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(prepareExceptionResponse(exception, HttpStatus.BAD_REQUEST));
